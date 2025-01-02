@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui-pro", "@nuxt/eslint"],
   css: ['~/assets/css/main.css'],
 
+  ui: {
+    colorMode: false
+  },
+
   future: {
     compatibilityVersion: 4
   },
