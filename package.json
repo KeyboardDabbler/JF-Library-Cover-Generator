@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.16",
-    "@nuxt/ui": "3.0.0-alpha.9",
+    "@nuxt/ui-pro": "3.0.0-alpha.10",
     "nuxt": "^3.14.1592"
   },
   "devDependencies": {
