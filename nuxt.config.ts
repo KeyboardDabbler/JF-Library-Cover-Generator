@@ -8,5 +8,19 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  compatibilityDate: "2024-11-27"
+  compatibilityDate: "2024-11-27",
+
+  typescript: {
+    typeCheck: false,
+    strict: false
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
 })

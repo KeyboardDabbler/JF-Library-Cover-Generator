@@ -2,5 +2,8 @@
   "*.css": "tailwindcss"
 },
 "editor.quickSuggestions": {
-  "strings": "on"
+  "strings": "on",
+},
+{
+  "eslint.useFlatConfig": true
 }
