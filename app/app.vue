@@ -9,7 +9,7 @@
     <Body class="antialiased duration-300 transition-colors">
       <NuxtLoadingIndicator />
       <div class="flex flex-col min-h-screen">
-        header
+        <UHeader title="Jellyfin Library Cover Generator" />
         <div class="flex-1 w-full flex flex-col">
           <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
             <UContainer>
