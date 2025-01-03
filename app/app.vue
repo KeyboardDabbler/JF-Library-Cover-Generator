@@ -120,6 +120,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     >
                       <UInput
                         v-model="state.url"
+                        size="xl"
                         placeholder="https://image.tmdb.org/t/p/original/hT2yA8oaKVjXHjPWlmy08fdPz9p.jpg"
                         class="w-full"
                       />
@@ -131,6 +132,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     >
                       <UInput
                         v-model="state.text"
+                        size="xl"
                         placeholder="Movies - General"
                         class="w-full"
                       />
@@ -142,6 +144,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     >
                       <USelect
                         v-model="state.filters"
+                        size="xl"
                         :items="filters"
                         class="w-full"
                       />
