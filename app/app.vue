@@ -1,5 +1,96 @@
 <script setup lang="ts">
+import * as z from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
 
+const schema = z.object({
+  url: z.string()
+    .url() // Validates it's a URL
+    .regex(
+      /^https:\/\/image\.tmdb\.org\/t\/p\/original\/[a-zA-Z0-9_-]+\.(jpg|png|jpeg)$/,
+      'URL must match the pattern: https://image.tmdb.org/t/p/original/{filename}.{ext}'
+    ),
+  text: z.string().max(23),
+  filters: z.string().refine(value => value === 'option-2', {
+    message: 'Select Option 2'
+  })
+})
+
+type Schema = z.input<typeof schema>
+
+const state = reactive<Partial<Schema>>({})
+
+const form = useTemplateRef('form')
+
+const filters = ref([
+  {
+    label: 'purple palette',
+    value: 'bug',
+    chip: {
+      color: 'purple' as const
+    }
+  },
+  {
+    label: 'neutral gray/blue',
+    value: 'feature',
+    chip: {
+      color: 'grayBlue' as const
+    }
+  },
+  {
+    label: 'warm orange',
+    value: 'enhancement',
+    chip: {
+      color: 'orangeRed' as const
+    }
+  },
+  {
+    label: 'red palette',
+    value: 'bug',
+    chip: {
+      color: 'boldRed' as const
+    }
+  },
+  {
+    label: 'calming blue',
+    value: 'feature',
+    chip: {
+      color: 'darkBlue' as const
+    }
+  },
+  {
+    label: 'blue',
+    value: 'enhancement',
+    chip: {
+      color: 'blueGradient' as const
+    }
+  },
+  {
+    label: 'bug',
+    value: 'bug',
+    chip: {
+      color: 'warmGray' as const
+    }
+  },
+  {
+    label: 'lighter gray',
+    value: 'feature',
+    chip: {
+      color: 'softBlue' as const
+    }
+  },
+  {
+    label: 'green',
+    value: 'enhancement',
+    chip: {
+      color: 'green' as const
+    }
+  }
+])
+
+async function onSubmit(event: FormSubmitEvent<any>) {
+  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
+  console.log(event.data)
+}
 </script>
 
 <template>
@@ -12,8 +103,32 @@
         <UHeader title="Jellyfin Library Cover Generator" />
         <div class="flex-1 w-full flex flex-col">
           <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
-            <UContainer>
-              tetststsdtfsugfgsfjygsdfjh
+            <UContainer class="">
+                <UForm ref="form" :state="state" :schema="schema" class="w-200" @submit="onSubmit">
+                  <div class="grid grid-cols-1 gap-4">
+                    <UFormField label="TMDB URL" name="url">
+                      <UInput v-model="state.url" placeholder="https://image.tmdb.org/t/p/original/hT2yA8oaKVjXHjPWlmy08fdPz9p.jpg" class="w-full" />
+                    </UFormField>
+
+                    <UFormField label="Cover Text" name="text">
+                      <UInput v-model="state.text" placeholder="Movies - General" class="w-full" />
+                    </UFormField>
+
+                      <UFormField label="Filter Color" name="filters">
+                        <USelect v-model="state.filters" :items="filters" class="w-full" />
+                      </UFormField>
+
+                    <div class="flex gap-2 mt-8">
+                      <UButton type="submit">
+                        Submit
+                      </UButton>
+
+                      <UButton variant="outline" @click="form?.clear()">
+                        Clear
+                      </UButton>
+                    </div>
+                  </div>
+                </UForm>
             </UContainer>
           </div>
         </div>
