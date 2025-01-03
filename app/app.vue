@@ -151,21 +151,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     </UFormField>
 
                     <div class="flex gap-2 mt-8">
-                      <UButton type="submit">
-                        Generate
-                      </UButton>
-
-                      <UButton
-                        variant="outline"
-                        @click="form?.clear()"
-                      >
-                        Clear
-                      </UButton>
-                    </div>
-                    <div class="flex gap-2 mt-8">
-                      <UButton type="submit">
-                        Download
-                      </UButton>
+                      <UButton type="submit">Generate</UButton>
+                      <UButton variant="outline" @click="form?.clear()">Clear</UButton>
+                      <UButton @click="downloadImage" v-if="generatedImage">Download</UButton>
                     </div>
                   </div>
 
