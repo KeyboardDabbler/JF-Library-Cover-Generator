@@ -27,5 +27,5 @@
     </Body>
 
     </Html>
-  </UApp>s
+  </UApp>
 </template>
