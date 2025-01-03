@@ -95,52 +95,86 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 
 <template>
   <UApp>
-    <Html class="scheme-only-dark scrollbar-thin" dir="ltr">
-
-    <Body class="antialiased duration-300 transition-colors">
-      <NuxtLoadingIndicator />
-      <div class="flex flex-col min-h-screen">
-        <UHeader title="Jellyfin Library Cover Generator" />
-        <div class="flex-1 w-full flex flex-col">
-          <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
-            <UContainer class="">
-                <UForm ref="form" :state="state" :schema="schema" class="w-200" @submit="onSubmit">
+    <Html
+      class="scheme-only-dark scrollbar-thin"
+      dir="ltr"
+    >
+      <Body class="antialiased duration-300 transition-colors">
+        <NuxtLoadingIndicator />
+        <div class="flex flex-col min-h-screen">
+          <UHeader title="Jellyfin Library Cover Generator" />
+          <div class="flex-1 w-full flex flex-col">
+            <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
+              <UContainer class="">
+                <UForm
+                  ref="form"
+                  :state="state"
+                  :schema="schema"
+                  class="w-200"
+                  @submit="onSubmit"
+                >
                   <div class="grid grid-cols-1 gap-4">
-                    <UFormField label="TMDB URL" name="url">
-                      <UInput v-model="state.url" placeholder="https://image.tmdb.org/t/p/original/hT2yA8oaKVjXHjPWlmy08fdPz9p.jpg" class="w-full" />
+                    <UFormField
+                      label="TMDB URL"
+                      name="url"
+                    >
+                      <UInput
+                        v-model="state.url"
+                        placeholder="https://image.tmdb.org/t/p/original/hT2yA8oaKVjXHjPWlmy08fdPz9p.jpg"
+                        class="w-full"
+                      />
                     </UFormField>
 
-                    <UFormField label="Cover Text" name="text">
-                      <UInput v-model="state.text" placeholder="Movies - General" class="w-full" />
+                    <UFormField
+                      label="Cover Text"
+                      name="text"
+                    >
+                      <UInput
+                        v-model="state.text"
+                        placeholder="Movies - General"
+                        class="w-full"
+                      />
                     </UFormField>
 
-                      <UFormField label="Filter Color" name="filters">
-                        <USelect v-model="state.filters" :items="filters" class="w-full" />
-                      </UFormField>
+                    <UFormField
+                      label="Filter Color"
+                      name="filters"
+                    >
+                      <USelect
+                        v-model="state.filters"
+                        :items="filters"
+                        class="w-full"
+                      />
+                    </UFormField>
 
                     <div class="flex gap-2 mt-8">
                       <UButton type="submit">
                         Submit
                       </UButton>
 
-                      <UButton variant="outline" @click="form?.clear()">
+                      <UButton
+                        variant="outline"
+                        @click="form?.clear()"
+                      >
                         Clear
                       </UButton>
                     </div>
                   </div>
                 </UForm>
-            </UContainer>
+              </UContainer>
+            </div>
           </div>
+          <UFooter>
+            <p class="my-3 text-dimText">
+              Made with ❤️ by <NuxtLink
+                to="https://github.com/KeyboardDabbler"
+                class="text-yellow-400 font-bold"
+              >
+                keyboardDabbler</NuxtLink>
+            </p>
+          </UFooter>
         </div>
-        <UFooter>
-          <p class="my-3 text-dimText">
-            Made with ❤️ by <NuxtLink to="https://github.com/KeyboardDabbler" class="text-yellow-400 font-bold">
-              keyboardDabbler</NuxtLink>
-          </p>
-        </UFooter>
-      </div>
-    </Body>
-
+      </Body>
     </Html>
   </UApp>
 </template>

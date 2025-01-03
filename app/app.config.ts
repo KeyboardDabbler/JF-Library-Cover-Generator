@@ -3,7 +3,7 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'indigo',
-      neutral: 'slate',
+      neutral: 'slate'
     },
     chip: {
       variants: {
@@ -25,7 +25,7 @@ export default defineAppConfig({
     header: {
       slots: {
         root: 'bg-[var(--darkerGradientPoint)]/75 backdrop-blur border-b border-[var(--darkerGradientPoint)] sticky top-0 z-50',
-        title: 'shrink-0 font-bold text-xl text-[var(--color-text)] flex items-end gap-1.5',
+        title: 'shrink-0 font-bold text-xl text-[var(--color-text)] flex items-end gap-1.5'
       }
     }
   }
