@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "DM Sans", sans-serif;
-  
+
   --color-text: rgb(209, 213, 219);
   --color-dimText: rgb(156, 163, 175);
 
@@ -12,6 +12,34 @@
   --lighterGradientPoint: #1d2635;
 
   --bg-linear-dark: linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint));
+
+  /* Duotone Colors */
+  --duotone-purple-primary: #480c8b;
+  --duotone-purple-secondary: #a96bef;
+
+  --duotone-gray-blue-primary: #1F2937;
+  --duotone-gray-blue-secondary: #D1D5DB;
+
+  --duotone-orange-red-primary: #92400E;
+  --duotone-orange-red-secondary: #FCD34D;
+
+  --duotone-bold-red-primary: #991B1B;
+  --duotone-bold-red-secondary: #FCA5A5;
+
+  --duotone-dark-blue-primary: #032541;
+  --duotone-dark-blue-secondary: #01b4e4;
+
+  --duotone-blue-gradient-primary: #1F2937;
+  --duotone-blue-gradient-secondary: #2864d2;
+
+  --duotone-warm-gray-primary: #374151;
+  --duotone-warm-gray-secondary: #9CA3AF;
+
+  --duotone-soft-blue-primary: #2563EB;
+  --duotone-soft-blue-secondary: #93C5FD;
+
+  --duotone-green-primary: #065F46;
+  --duotone-green-secondary: #6EE7B7;
 }
 
 @utility bg-linear-dark {
