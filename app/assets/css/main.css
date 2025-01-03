@@ -3,8 +3,21 @@
 
 @theme {
   --font-sans: 'Public Sans', sans-serif;
+
+  --darkerGradientPoint: #111827;
+  --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
+  --lighterGradientPoint: #1d2635;
+
+  --bg-linear-dark: linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint));
+}
+
+@utility bg-linear-dark {
+  background: var(--bg-linear-dark);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body {
-  @apply bg-gray-100 dark:bg-gray-950;
+  @apply bg-linear-dark;
 }
