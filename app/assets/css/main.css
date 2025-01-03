@@ -2,7 +2,10 @@
 @import "@nuxt/ui-pro";
 
 @theme {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  
+  --color-text: rgb(209, 213, 219);
+  --color-dimText: rgb(156, 163, 175);
 
   --darkerGradientPoint: #111827;
   --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
@@ -19,5 +22,5 @@
 }
 
 body {
-  @apply bg-linear-dark;
+  @apply bg-linear-dark text-text;
 }
