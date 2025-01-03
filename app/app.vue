@@ -105,12 +105,12 @@ async function onSubmit(event: FormSubmitEvent<any>) {
           <UHeader title="Jellyfin Library Cover Generator" />
           <div class="flex-1 w-full flex flex-col">
             <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
-              <UContainer class="">
+              <div class="px-4 sm:px-6 lg:px-8">
                 <UForm
                   ref="form"
                   :state="state"
                   :schema="schema"
-                  class="w-200"
+                  class="w-full max-w-[960px] mx-auto"
                   @submit="onSubmit"
                 >
                   <div class="grid grid-cols-1 gap-4">
@@ -149,7 +149,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 
                     <div class="flex gap-2 mt-8">
                       <UButton type="submit">
-                        Submit
+                        Generate
                       </UButton>
 
                       <UButton
@@ -159,9 +159,19 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                         Clear
                       </UButton>
                     </div>
+                    <div class="flex gap-2 mt-8">
+                      <UButton type="submit">
+                        Download
+                      </UButton>
+                    </div>
                   </div>
+
+                  <canvas
+                    ref="canvas"
+                    class="border mt-10 max-w-[960px] max-h-[540px] w-full h-auto"
+                  />
                 </UForm>
-              </UContainer>
+              </div>
             </div>
           </div>
           <UFooter>
