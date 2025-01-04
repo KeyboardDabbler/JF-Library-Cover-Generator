@@ -24,6 +24,8 @@ const state = reactive<Partial<Schema>>({})
 
 const form = useTemplateRef('form')
 
+const generatedImage = ref<string | null>(null)
+
 const duotones = {
   vividPink: ['var(--duotone-vivid-pink-primary)', 'var(--duotone-vivid-pink-secondary)'],
   royalPurple: ['var(--duotone-royal-purple-primary)', 'var(--duotone-royal-purple-secondary)'],
@@ -243,7 +245,17 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                       </UButton>
                       <UButton
                         variant="outline"
-                        @click="() => { form?.clear(); state.url = ''; state.text = ''; state.filters = 'null'; }"
+                        @click="() => {
+                          form?.clear()
+                          state.url = ''
+                          state.text = ''
+                          state.filters = 'null'
+                          generatedImage.value = null
+                          const canvas = document.querySelector('canvas')
+                          const ctx = canvas.getContext('2d')
+                          ctx.clearRect(0, 0, canvas.width, canvas.height)
+                          toast.add({ title: 'Form cleared', description: 'Fields and canvas reset.', color: 'info' })
+                        }"
                       >
                         Clear
                       </UButton>
