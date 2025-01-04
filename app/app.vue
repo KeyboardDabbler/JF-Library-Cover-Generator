@@ -195,14 +195,11 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                       </UButton>
                       <UButton
                         variant="outline"
-                        @click="form?.clear()"
+                        @click="() => { form?.clear(); state.url = ''; state.text = ''; state.filters = 'null'; }"
                       >
                         Clear
                       </UButton>
-                      <UButton
-                        v-if="generatedImage"
-                        @click="downloadImage"
-                      >
+                      <UButton>
                         Download
                       </UButton>
                     </div>
