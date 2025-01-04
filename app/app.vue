@@ -161,8 +161,11 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   backdrop.src = generatedURL
 
   backdrop.onload = () => {
-    canvas.width = backdrop.naturalWidth
-    canvas.height = backdrop.naturalHeight
+    const targetWidth = 960
+    const targetHeight = 540
+
+    canvas.width = targetWidth
+    canvas.height = targetHeight
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.drawImage(backdrop, 0, 0, canvas.width, canvas.height)
