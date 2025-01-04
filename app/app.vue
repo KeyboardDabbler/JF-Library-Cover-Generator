@@ -16,6 +16,8 @@ const schema = z.object({
   )
 })
 
+const toast = useToast()
+
 type Schema = z.input<typeof schema>
 
 const state = reactive<Partial<Schema>>({})
@@ -124,11 +126,21 @@ const filters = ref([
   }
 ])
 
-const toast = useToast()
-
 async function onSubmit(event: FormSubmitEvent<any>) {
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'primary' })
   console.log(event.data)
+  console.log(event.data.url)
+  console.log(event.data.filters)
+  console.log(event.data.text)
+
+  const [color1, color2] = duotones[event.data.filters];
+  const filteredUrl = event.data.url.replace(
+    '/original/',
+    `/w1280_filter(duotone,${color1},${color2})/`
+  )
+  console.log(color1)
+  console.log(color2)
+  console.log(filteredUrl)
 }
 </script>
 
