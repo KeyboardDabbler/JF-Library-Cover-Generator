@@ -171,7 +171,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 
     this.generatedImage = canvas.toDataURL('image/png')
 
-    toast.add({ title: 'Success', description: 'Image generating, please wait.', color: 'primary' })
+    toast.add({ title: 'Success', description: 'Image generated.', color: 'primary' })
   }
 
   backdrop.onerror = () => {
