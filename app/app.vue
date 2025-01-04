@@ -126,6 +126,17 @@ const filters = ref([
   }
 ])
 
+function resolveCSSVariable(variable) {
+  const tempElement = document.createElement('div')
+  document.body.appendChild(tempElement)
+  tempElement.style.setProperty('--temp-variable', variable)
+
+  const computedValue = getComputedStyle(tempElement).getPropertyValue('--temp-variable').trim()
+  document.body.removeChild(tempElement)
+
+  return computedValue
+}
+
 async function onSubmit(event: FormSubmitEvent<any>) {
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'primary' })
   console.log(event.data)
@@ -133,14 +144,15 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   console.log(event.data.filters)
   console.log(event.data.text)
 
-  const [color1, color2] = duotones[event.data.filters];
-  const filteredUrl = event.data.url.replace(
+  const [colorVar1, colorVar2] = duotones[event.data.filters]
+  const color1 = resolveCSSVariable(colorVar1).replace('#', '')
+  const color2 = resolveCSSVariable(colorVar2).replace('#', '')
+
+  const generatedURL = event.data.url.replace(
     '/original/',
     `/w1280_filter(duotone,${color1},${color2})/`
   )
-  console.log(color1)
-  console.log(color2)
-  console.log(filteredUrl)
+  console.log('Generated URL:', generatedURL)
 }
 </script>
 
