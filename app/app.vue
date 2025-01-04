@@ -109,8 +109,10 @@ const filters = ref([
   }
 ])
 
+const toast = useToast()
+
 async function onSubmit(event: FormSubmitEvent<any>) {
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
+  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'primary' })
   console.log(event.data)
 }
 </script>
