@@ -153,6 +153,38 @@ async function onSubmit(event: FormSubmitEvent<any>) {
     `/w1280_filter(duotone,${color1},${color2})/`
   )
   console.log('Generated URL:', generatedURL)
+
+  const canvas = document.querySelector('canvas') as HTMLCanvasElement | null
+  if (!canvas) {
+    console.error('Canvas element not found')
+    return
+  }
+
+  const ctx = canvas.getContext('2d')
+  if (!ctx) {
+    console.error('Unable to get context for the canvas')
+    return
+  }
+
+  const backdrop = new Image()
+  backdrop.crossOrigin = 'Anonymous'
+  backdrop.src = generatedURL
+
+  backdrop.onload = () => {
+    canvas.width = backdrop.naturalWidth
+    canvas.height = backdrop.naturalHeight
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(backdrop, 0, 0, canvas.width, canvas.height)
+
+    ctx.font = '900 72pt Inter'
+    ctx.fillStyle = 'white'
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(event.data.text, canvas.width / 2, canvas.height / 2)
+
+    this.generatedImage = canvas.toDataURL('image/png')
+  }
 }
 </script>
 
