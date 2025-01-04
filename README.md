@@ -19,7 +19,7 @@
 
 
 ## 🛠️ How to Use
-
+https://github.com/user-attachments/assets/67ab0e03-b8c4-4805-a2eb-707837ebee57
 
 ## 💭 Thoughts
 This project leverages TMDB’s free API to access backdrops.
