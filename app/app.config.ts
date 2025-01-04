@@ -8,15 +8,18 @@ export default defineAppConfig({
     chip: {
       variants: {
         color: {
-          purple: 'bg-[var(--duotone-purple-primary)]',
-          grayBlue: 'bg-[var(--duotone-gray-blue-primary)]',
-          orangeRed: 'bg-[var(--duotone-orange-red-primary)]',
-          boldRed: 'bg-[var(--duotone-bold-red-primary)]',
-          darkBlue: 'bg-[var(--duotone-dark-blue-primary)]',
-          blueGradient: 'bg-[var(--duotone-blue-gradient-primary)]',
-          warmGray: 'bg-[var(--duotone-warm-gray-primary)]',
-          softBlue: 'bg-[var(--duotone-soft-blue-primary)]',
-          green: 'bg-[var(--duotone-green-primary)]'
+          vividPink: 'bg-[var(--duotone-vivid-pink-secondary)]',
+          royalPurple: 'bg-[var(--duotone-royal-purple-secondary)]',
+          deepBlue: 'bg-[var(--duotone-deep-blue-secondary)]',
+          goldenOrange: 'bg-[var(--duotone-golden-orange-secondary)]',
+          tropicalGreen: 'bg-[var(--duotone-tropical-green-secondary)]',
+          mutedBlue: 'bg-[var(--duotone-muted-blue-secondary)]',
+          earthyLime: 'bg-[var(--duotone-earthy-lime-secondary)]',
+          lavenderPurple: 'bg-[var(--duotone-lavender-purple-secondary)]',
+          coolGray: 'bg-[var(--duotone-cool-gray-secondary)]',
+          rustyAmber: 'bg-[var(--duotone-rusty-amber-secondary)]',
+          softBlue: 'bg-[var(--duotone-soft-blue-secondary)]',
+          blushRed: 'bg-[var(--duotone-blush-red-secondary)]'
         }
       }
     }

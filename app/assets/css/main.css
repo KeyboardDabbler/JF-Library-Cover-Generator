@@ -14,32 +14,41 @@
   --bg-linear-dark: linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint));
 
   /* Duotone Colors */
-  --duotone-purple-primary: #480c8b;
-  --duotone-purple-secondary: #a96bef;
+  --duotone-vivid-pink-primary: #9D174D;
+  --duotone-vivid-pink-secondary: #F9A8D4;
 
-  --duotone-gray-blue-primary: #1F2937;
-  --duotone-gray-blue-secondary: #D1D5DB;
+  --duotone-royal-purple-primary: #480C8B;
+  --duotone-royal-purple-secondary: #A96BEF;
 
-  --duotone-orange-red-primary: #92400E;
-  --duotone-orange-red-secondary: #FCD34D;
+  --duotone-deep-blue-primary: #032541;
+  --duotone-deep-blue-secondary: #01B4E4;
 
-  --duotone-bold-red-primary: #991B1B;
-  --duotone-bold-red-secondary: #FCA5A5;
+  --duotone-golden-orange-primary: #92400E;
+  --duotone-golden-orange-secondary: #FCD34D;
 
-  --duotone-dark-blue-primary: #032541;
-  --duotone-dark-blue-secondary: #01b4e4;
+  --duotone-tropical-green-primary: #065F46;
+  --duotone-tropical-green-secondary: #6EE7B7;
 
-  --duotone-blue-gradient-primary: #1F2937;
-  --duotone-blue-gradient-secondary: #2864d2;
+  --duotone-muted-blue-primary: #1F2937;
+  --duotone-muted-blue-secondary: #2864D2;
 
-  --duotone-warm-gray-primary: #374151;
-  --duotone-warm-gray-secondary: #9CA3AF;
+  --duotone-earthy-lime-primary: #777E0D;
+  --duotone-earthy-lime-secondary: #E4ED55;
 
-  --duotone-soft-blue-primary: #2563EB;
-  --duotone-soft-blue-secondary: #93C5FD;
+  --duotone-lavender-purple-primary: #5B21B6;
+  --duotone-lavender-purple-secondary: #C4B5FD;
 
-  --duotone-green-primary: #065F46;
-  --duotone-green-secondary: #6EE7B7;
+  --duotone-cool-gray-primary: #1F2937;
+  --duotone-cool-gray-secondary: #D1D5DB;
+
+  --duotone-rusty-amber-primary: #552C01;
+  --duotone-rusty-amber-secondary: #D47C1D;
+
+  --duotone-soft-blue-primary: #1F2937;
+  --duotone-soft-blue-secondary: #60A5FA;
+
+  --duotone-blush-red-primary: #1F2937;
+  --duotone-blush-red-secondary: #F87171;
 }
 
 @utility bg-linear-dark {
@@ -52,3 +61,9 @@
 body {
   @apply bg-linear-dark text-text;
 }
+
+
+
+
+
+(duotone, 9D174D, F9A8D4) (duotone, 480c8b, a96bef) (duotone, 032541, 01b4e4) (duotone, 92400E, FCD34D) (duotone, 065F46, 6EE7B7) (duotone, 1F2937, 2864d2) (duotone, 9D174D, F9A8D4) (duotone, 777e0d, e4ed55) (duotone, 032541, 01b4e4) (duotone, 5B21B6, C4B5FD) (duotone, 1F2937, D1D5DB) (duotone, 552c01, d47c1d) (duotone, 1F2937, 60A5FA) (duotone, 1F2937, 60A5FA) (duotone, 9D174D, F9A8D4) (duotone, 065F46, 6EE7B7) (duotone, 1F2937, F87171) (duotone, 92400E, FCD34D)

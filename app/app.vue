@@ -23,66 +23,87 @@ const form = useTemplateRef('form')
 
 const filters = ref([
   {
-    label: 'purple palette',
+    label: 'Vivid Pink',
     value: 'bug',
     chip: {
-      color: 'purple' as const
+      color: 'vividPink' as const
     }
   },
   {
-    label: 'neutral gray/blue',
+    label: 'Royal Purple',
     value: 'feature',
     chip: {
-      color: 'grayBlue' as const
+      color: 'royalPurple' as const
     }
   },
   {
-    label: 'warm orange',
+    label: 'Deep Blue',
     value: 'enhancement',
     chip: {
-      color: 'orangeRed' as const
+      color: 'deepBlue' as const
     }
   },
   {
-    label: 'red palette',
+    label: 'Golden Orange',
     value: 'bug',
     chip: {
-      color: 'boldRed' as const
+      color: 'goldenOrange' as const
     }
   },
   {
-    label: 'calming blue',
+    label: 'Tropical Green',
     value: 'feature',
     chip: {
-      color: 'darkBlue' as const
+      color: 'tropicalGreen' as const
     }
   },
   {
-    label: 'blue',
+    label: 'Muted Blue',
     value: 'enhancement',
     chip: {
-      color: 'blueGradient' as const
+      color: 'mutedBlue' as const
     }
   },
   {
-    label: 'bug',
+    label: 'Earthy Lime',
     value: 'bug',
     chip: {
-      color: 'warmGray' as const
+      color: 'earthyLime' as const
     }
   },
   {
-    label: 'lighter gray',
+    label: 'Lavender Purple',
+    value: 'feature',
+    chip: {
+      color: 'lavenderPurple' as const
+    }
+  },
+  {
+    label: 'Cool Gray',
+    value: 'enhancement',
+    chip: {
+      color: 'coolGray' as const
+    }
+  },
+  {
+    label: 'Rusty Amber',
+    value: 'bug',
+    chip: {
+      color: 'rustyAmber' as const
+    }
+  },
+  {
+    label: 'Soft Blue',
     value: 'feature',
     chip: {
       color: 'softBlue' as const
     }
   },
   {
-    label: 'green',
+    label: 'Blush Red',
     value: 'enhancement',
     chip: {
-      color: 'green' as const
+      color: 'blushRed' as const
     }
   }
 ])
