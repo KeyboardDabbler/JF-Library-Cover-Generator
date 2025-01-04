@@ -139,10 +139,6 @@ function resolveCSSVariable(variable) {
 
 async function onSubmit(event: FormSubmitEvent<any>) {
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'primary' })
-  console.log(event.data)
-  console.log(event.data.url)
-  console.log(event.data.filters)
-  console.log(event.data.text)
 
   const [colorVar1, colorVar2] = duotones[event.data.filters]
   const color1 = resolveCSSVariable(colorVar1).replace('#', '')
@@ -152,19 +148,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
     '/original/',
     `/w1280_filter(duotone,${color1},${color2})/`
   )
-  console.log('Generated URL:', generatedURL)
 
   const canvas = document.querySelector('canvas') as HTMLCanvasElement | null
-  if (!canvas) {
-    console.error('Canvas element not found')
-    return
-  }
-
   const ctx = canvas.getContext('2d')
-  if (!ctx) {
-    console.error('Unable to get context for the canvas')
-    return
-  }
 
   const backdrop = new Image()
   backdrop.crossOrigin = 'Anonymous'
