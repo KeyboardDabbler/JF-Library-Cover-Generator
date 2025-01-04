@@ -138,7 +138,7 @@ function resolveCSSVariable(variable) {
 }
 
 async function onSubmit(event: FormSubmitEvent<any>) {
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'primary' })
+  toast.add({ title: 'Success', description: 'Image generating, please wait.', color: 'primary' })
 
   const [colorVar1, colorVar2] = duotones[event.data.filters]
   const color1 = resolveCSSVariable(colorVar1).replace('#', '')
@@ -170,6 +170,12 @@ async function onSubmit(event: FormSubmitEvent<any>) {
     ctx.fillText(event.data.text, canvas.width / 2, canvas.height / 2)
 
     this.generatedImage = canvas.toDataURL('image/png')
+
+    toast.add({ title: 'Success', description: 'Image generating, please wait.', color: 'primary' })
+  }
+
+  backdrop.onerror = () => {
+    toast.add({ title: 'Error', description: 'Failed to load the image. Please check the URL and try again.', color: 'error' })
   }
 }
 </script>
