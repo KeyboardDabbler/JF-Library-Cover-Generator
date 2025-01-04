@@ -1,75 +1,44 @@
-# Nuxt UI v3 Starter
+<div align="center"> 
+  <h1>TMDB to Jellyfin Library Cover Generator 🌟</h1>
+  <p>Easily transform backdrops from <a href="https://www.themoviedb.org/" target="_blank">TMDB</a> into visually stunning covers for your <a href="https://jellyfin.org/" target="_blank">Jellyfin</a> library. This tool is specifically designed to complement the <a href="https://github.com/lscambo13/ElegantFin" target="_blank"><strong>ElegantFin</strong></a> theme, providing an eye catching media experience. 🎬✨</p>
+</div>
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui3.nuxt.dev) to learn more.
+## 🚀 Features
 
-## Setup
+- Converts TMDB backdrops into **Jellyfin library covers**.
+- Automatically matches the ElegantFin theme.
+- Easy to use interface.
 
-Make sure to install the dependencies:
+## 🖼️ Previews
+  
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/Homepage.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/Movies%20-%20Superheroes.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20Emergency%20%26%20Rescue.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20General.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20Kids%20%26%20Family.png" style="width:360px;height:auto;"></img>
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
+## 🛠️ How to Use
 
-# yarn
-yarn install
 
-# bun
-bun install
-```
+## 💭 Thoughts
+This project leverages TMDB’s free API to access backdrops.
+- Avoid excessive API requests to ensure the service remains available to everyone.
+- Respect copyright!
 
-## Development Server
+## 🛠️ Stack Used
+- Frontend: Nuxt v3, Nuxt UI v3 & Tailwind CSS v4.
+- Image: Canvas.
+- API: TMDB API for backdrop data.
+- Hosting: Deployed on Vercel.
 
-Start the development server on `http://localhost:3000`:
+## 🔮 Future Updates
+- Implement backend API rate limiting.
 
-```bash
-# npm
-npm run dev
+## 📄 License
+This project is licensed under the [MIT License](./LICENSE).
 
-# pnpm
-pnpm run dev
+## 🌟 Support
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+If you like this project, please give it a ⭐ on GitHub!
+Feel free to share your feedback and suggestions. Contributions are welcome! 🛠️
