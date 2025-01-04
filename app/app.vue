@@ -281,6 +281,12 @@ function downloadImage() {
                         Generate
                       </UButton>
                       <UButton
+                        v-if="generatedImage"
+                        @click="downloadImage"
+                      >
+                        Download
+                      </UButton>
+                      <UButton
                         variant="outline"
                         @click="() => {
                           form?.clear();
@@ -288,12 +294,6 @@ function downloadImage() {
                         }"
                       >
                         Clear
-                      </UButton>
-                      <UButton
-                        v-if="generatedImage"
-                        @click="downloadImage"
-                      >
-                        Download
                       </UButton>
                     </div>
                   </div>
