@@ -10,9 +10,10 @@ const schema = z.object({
       'URL must match the pattern: https://image.tmdb.org/t/p/original/{filename}.{ext}'
     ),
   text: z.string().max(23),
-  filters: z.string().refine(value => value === 'option-2', {
-    message: 'Select Option 2'
-  })
+  filters: z.string().refine(
+    value => ['vividPink', 'royalPurple', 'deepBlue', 'goldenOrange', 'tropicalGreen', 'mutedBlue', 'earthyLime', 'lavenderPurple', 'coolGray', 'rustyAmber', 'softBlue', 'blushRed'].includes(value),
+    { message: 'Please select a filter option' }
+  )
 })
 
 type Schema = z.input<typeof schema>
@@ -24,84 +25,84 @@ const form = useTemplateRef('form')
 const filters = ref([
   {
     label: 'Vivid Pink',
-    value: 'bug',
+    value: 'vividPink',
     chip: {
       color: 'vividPink' as const
     }
   },
   {
     label: 'Royal Purple',
-    value: 'feature',
+    value: 'royalPurple',
     chip: {
       color: 'royalPurple' as const
     }
   },
   {
     label: 'Deep Blue',
-    value: 'enhancement',
+    value: 'deepBlue',
     chip: {
       color: 'deepBlue' as const
     }
   },
   {
     label: 'Golden Orange',
-    value: 'bug',
+    value: 'goldenOrange',
     chip: {
       color: 'goldenOrange' as const
     }
   },
   {
     label: 'Tropical Green',
-    value: 'feature',
+    value: 'tropicalGreen',
     chip: {
       color: 'tropicalGreen' as const
     }
   },
   {
     label: 'Muted Blue',
-    value: 'enhancement',
+    value: 'mutedBlue',
     chip: {
       color: 'mutedBlue' as const
     }
   },
   {
     label: 'Earthy Lime',
-    value: 'bug',
+    value: 'earthyLime',
     chip: {
       color: 'earthyLime' as const
     }
   },
   {
     label: 'Lavender Purple',
-    value: 'feature',
+    value: 'lavenderPurple',
     chip: {
       color: 'lavenderPurple' as const
     }
   },
   {
     label: 'Cool Gray',
-    value: 'enhancement',
+    value: 'coolGray',
     chip: {
       color: 'coolGray' as const
     }
   },
   {
     label: 'Rusty Amber',
-    value: 'bug',
+    value: 'rustyAmber',
     chip: {
       color: 'rustyAmber' as const
     }
   },
   {
     label: 'Soft Blue',
-    value: 'feature',
+    value: 'softBlue',
     chip: {
       color: 'softBlue' as const
     }
   },
   {
     label: 'Blush Red',
-    value: 'enhancement',
+    value: 'blushRed',
     chip: {
       color: 'blushRed' as const
     }
@@ -172,9 +173,21 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     </UFormField>
 
                     <div class="flex gap-2 mt-8">
-                      <UButton type="submit">Generate</UButton>
-                      <UButton variant="outline" @click="form?.clear()">Clear</UButton>
-                      <UButton @click="downloadImage" v-if="generatedImage">Download</UButton>
+                      <UButton type="submit">
+                        Generate
+                      </UButton>
+                      <UButton
+                        variant="outline"
+                        @click="form?.clear()"
+                      >
+                        Clear
+                      </UButton>
+                      <UButton
+                        v-if="generatedImage"
+                        @click="downloadImage"
+                      >
+                        Download
+                      </UButton>
                     </div>
                   </div>
 
