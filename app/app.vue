@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
+import { Analytics } from '@vercel/analytics/nuxt';
 
 const schema = z.object({
   url: z.string()
@@ -217,6 +218,7 @@ function downloadImage() {
 </script>
 
 <template>
+  <Analytics />
   <UApp>
     <Html
       class="scheme-only-dark scrollbar-thin"
