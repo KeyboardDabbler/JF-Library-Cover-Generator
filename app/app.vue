@@ -218,8 +218,8 @@ function downloadImage() {
 </script>
 
 <template>
-  <Analytics />
   <UApp>
+    <Analytics />
     <Html
       class="scheme-only-dark scrollbar-thin"
       dir="ltr"
