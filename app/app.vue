@@ -141,6 +141,23 @@ function resolveCSSVariable(variable: string): string {
   return computedValue
 }
 
+function clearFormAndCanvas() {
+  state.url = ''
+  state.text = ''
+  state.filters = ''
+  generatedImage.value = ''
+
+  const canvas = document.querySelector('canvas')
+  if (canvas) {
+    const ctx = canvas.getContext('2d')
+    if (ctx) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+  }
+
+  toast.add({ title: 'Form cleared', description: 'Fields and canvas reset.', color: 'info' })
+}
+
 async function onSubmit(event: FormSubmitEvent<any>) {
   toast.add({ title: 'Success', description: 'Image generating, please wait.', color: 'primary' })
 
@@ -195,20 +212,7 @@ function downloadImage() {
 
   toast.add({ title: 'Download complete', description: 'Your image has been downloaded.', color: 'success' })
 
-  state.url = ''
-  state.text = ''
-  state.filters = ''
-  generatedImage.value = ''
-
-  const canvas = document.querySelector('canvas')
-  if (canvas) {
-    const ctx = canvas.getContext('2d')
-    if (ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-    }
-  }
-
-  toast.add({ title: 'Form cleared', description: 'Fields and canvas reset.', color: 'info' })
+  clearFormAndCanvas()
 }
 </script>
 
@@ -279,11 +283,8 @@ function downloadImage() {
                       <UButton
                         variant="outline"
                         @click="() => {
-                          form?.clear()
-                          state.url = ''
-                          state.text = ''
-                          state.filters = ''
-                          toast.add({ title: 'Form cleared', description: 'Fields reset.', color: 'info' })
+                          form?.clear();
+                          clearFormAndCanvas();
                         }"
                       >
                         Clear
