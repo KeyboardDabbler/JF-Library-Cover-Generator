@@ -3,6 +3,7 @@
 
 @theme {
   --font-sans: "DM Sans", sans-serif;
+  --font-inter: 'Inter', sans-serif;
 
   --color-text: rgb(209, 213, 219);
   --color-dimText: rgb(156, 163, 175);
