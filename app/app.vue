@@ -4,12 +4,14 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 
 const schema = z.object({
   url: z.string()
-    .url() // Validates it's a URL
+    .url()
     .regex(
       /^https:\/\/image\.tmdb\.org\/t\/p\/original\/[a-zA-Z0-9_-]+\.(jpg|png|jpeg)$/,
       'URL must match the pattern: https://image.tmdb.org/t/p/original/{filename}.{ext}'
     ),
-  text: z.string().max(23),
+  text: z.string()
+    .min(1, 'Text must be at least 1 character long')
+    .max(23, 'Text must be at most 23 characters long'),
   filters: z.string().refine(
     value => ['vividPink', 'royalPurple', 'deepBlue', 'goldenOrange', 'tropicalGreen', 'mutedBlue', 'earthyLime', 'lavenderPurple', 'coolGray', 'rustyAmber', 'softBlue', 'blushRed'].includes(value),
     { message: 'Please select a filter option' }
