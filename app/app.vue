@@ -130,7 +130,7 @@ const filters = ref([
   }
 ])
 
-function resolveCSSVariable(variable) {
+function resolveCSSVariable(variable: string): string {
   const tempElement = document.createElement('div')
   document.body.appendChild(tempElement)
   tempElement.style.setProperty('--temp-variable', variable)
