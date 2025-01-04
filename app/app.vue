@@ -24,7 +24,7 @@ const state = reactive<Partial<Schema>>({})
 
 const form = useTemplateRef('form')
 
-const generatedImage = ref<string | null>(null)
+const generatedImage = ref('')
 
 const duotones = {
   vividPink: ['var(--duotone-vivid-pink-primary)', 'var(--duotone-vivid-pink-secondary)'],
@@ -171,7 +171,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
     ctx.textBaseline = 'middle'
     ctx.fillText(event.data.text, canvas.width / 2, canvas.height / 2)
 
-    this.generatedImage = canvas.toDataURL('image/png')
+    generatedImage.value = canvas.toDataURL('image/png')
 
     toast.add({ title: 'Success', description: 'Image generated.', color: 'primary' })
   }
@@ -179,6 +179,20 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   backdrop.onerror = () => {
     toast.add({ title: 'Error', description: 'Failed to load the image. Please check the URL and try again.', color: 'error' })
   }
+}
+
+function downloadImage() {
+  if (!generatedImage.value) return
+  const a = document.createElement('a')
+  a.href = generatedImage.value
+  a.download = `${state.text}.png`
+  a.click()
+
+  state.url = ''
+  state.text = ''
+  state.filters = ''
+  generatedImage.value = ''
+  toast.add({ title: 'Download complete', description: 'Your image has been downloaded.', color: 'success' })
 }
 </script>
 
@@ -240,7 +254,10 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                     </UFormField>
 
                     <div class="flex gap-2 mt-8">
-                      <UButton type="submit">
+                      <UButton
+                        v-if="!generatedImage"
+                        type="submit"
+                      >
                         Generate
                       </UButton>
                       <UButton
@@ -249,8 +266,8 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                           form?.clear()
                           state.url = ''
                           state.text = ''
-                          state.filters = 'null'
-                          generatedImage.value = null
+                          state.filters = ''
+                          generatedImage = ''
                           const canvas = document.querySelector('canvas')
                           const ctx = canvas.getContext('2d')
                           ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -259,7 +276,10 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                       >
                         Clear
                       </UButton>
-                      <UButton>
+                      <UButton
+                        v-if="generatedImage"
+                        @click="downloadImage"
+                      >
                         Download
                       </UButton>
                     </div>
