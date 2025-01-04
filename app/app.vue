@@ -193,11 +193,22 @@ function downloadImage() {
   a.download = `${state.text}.png`
   a.click()
 
+  toast.add({ title: 'Download complete', description: 'Your image has been downloaded.', color: 'success' })
+
   state.url = ''
   state.text = ''
   state.filters = ''
   generatedImage.value = ''
-  toast.add({ title: 'Download complete', description: 'Your image has been downloaded.', color: 'success' })
+
+  const canvas = document.querySelector('canvas')
+  if (canvas) {
+    const ctx = canvas.getContext('2d')
+    if (ctx) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+  }
+
+  toast.add({ title: 'Form cleared', description: 'Fields and canvas reset.', color: 'info' })
 }
 </script>
 
@@ -272,11 +283,7 @@ function downloadImage() {
                           state.url = ''
                           state.text = ''
                           state.filters = ''
-                          generatedImage = ''
-                          const canvas = document.querySelector('canvas')
-                          const ctx = canvas.getContext('2d')
-                          ctx.clearRect(0, 0, canvas.width, canvas.height)
-                          toast.add({ title: 'Form cleared', description: 'Fields and canvas reset.', color: 'info' })
+                          toast.add({ title: 'Form cleared', description: 'Fields reset.', color: 'info' })
                         }"
                       >
                         Clear
