@@ -22,6 +22,21 @@ const state = reactive<Partial<Schema>>({})
 
 const form = useTemplateRef('form')
 
+const duotones = {
+  vividPink: ['var(--duotone-vivid-pink-primary)', 'var(--duotone-vivid-pink-secondary)'],
+  royalPurple: ['var(--duotone-royal-purple-primary)', 'var(--duotone-royal-purple-secondary)'],
+  deepBlue: ['var(--duotone-deep-blue-primary)', 'var(--duotone-deep-blue-secondary)'],
+  goldenOrange: ['var(--duotone-golden-orange-primary)', 'var(--duotone-golden-orange-secondary)'],
+  tropicalGreen: ['var(--duotone-tropical-green-primary)', 'var(--duotone-tropical-green-secondary)'],
+  mutedBlue: ['var(--duotone-muted-blue-primary)', 'var(--duotone-muted-blue-secondary)'],
+  earthyLime: ['var(--duotone-earthy-lime-primary)', 'var(--duotone-earthy-lime-secondary)'],
+  lavenderPurple: ['var(--duotone-lavender-purple-primary)', 'var(--duotone-lavender-purple-secondary)'],
+  coolGray: ['var(--duotone-cool-gray-primary)', 'var(--duotone-cool-gray-secondary)'],
+  rustyAmber: ['var(--duotone-rusty-amber-primary)', 'var(--duotone-rusty-amber-secondary)'],
+  softBlue: ['var(--duotone-soft-blue-primary)', 'var(--duotone-soft-blue-secondary)'],
+  blushRed: ['var(--duotone-blush-red-primary)', 'var(--duotone-blush-red-secondary)']
+}
+
 const filters = ref([
   {
     label: 'Vivid Pink',
