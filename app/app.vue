@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
-import { Analytics } from '@vercel/analytics/nuxt';
+import { Analytics } from '@vercel/analytics/nuxt'
 
 const schema = z.object({
   url: z.string()
@@ -160,8 +160,7 @@ function clearFormAndCanvas() {
 }
 
 async function onSubmit(event: FormSubmitEvent<any>) {
-  toast.add({ title: 'Success', description: 'Image generating, please wait.', color: 'primary' })
-
+  toast.add({ title: 'Processing', description: 'Generating image...', color: 'primary' })
   const [colorVar1, colorVar2] = duotones[event.data.filters]
   const color1 = resolveCSSVariable(colorVar1).replace('#', '')
   const color2 = resolveCSSVariable(colorVar2).replace('#', '')
@@ -172,36 +171,36 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   )
 
   const canvas = document.querySelector('canvas') as HTMLCanvasElement | null
-  const ctx = canvas.getContext('2d')
+  const ctx = canvas?.getContext('2d')
 
   const backdrop = new Image()
   backdrop.crossOrigin = 'Anonymous'
   backdrop.src = generatedURL
 
-  backdrop.onload = () => {
-    const targetWidth = 960
-    const targetHeight = 540
+  await new Promise<void>((resolve, reject) => {
+    backdrop.onload = () => {
+      const targetWidth = 960
+      const targetHeight = 540
+      if (canvas && ctx) {
+        canvas.width = targetWidth
+        canvas.height = targetHeight
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(backdrop, 0, 0, canvas.width, canvas.height)
+        ctx.font = '900 72pt "Inter", sans-serif'
+        ctx.fillStyle = 'white'
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillText(event.data.text, canvas.width / 2, canvas.height / 2)
+        generatedImage.value = canvas.toDataURL('image/png')
+        resolve()
+      } else {
+        reject(new Error('Canvas not initialized'))
+      }
+    }
+    backdrop.onerror = reject
+  })
 
-    canvas.width = targetWidth
-    canvas.height = targetHeight
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.drawImage(backdrop, 0, 0, canvas.width, canvas.height)
-
-    ctx.font = '900 72pt "Inter", sans-serif'
-    ctx.fillStyle = 'white'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'middle'
-    ctx.fillText(event.data.text, canvas.width / 2, canvas.height / 2)
-
-    generatedImage.value = canvas.toDataURL('image/png')
-
-    toast.add({ title: 'Success', description: 'Image generated.', color: 'primary' })
-  }
-
-  backdrop.onerror = () => {
-    toast.add({ title: 'Error', description: 'Failed to load the image. Please check the URL and try again.', color: 'error' })
-  }
+  toast.add({ title: 'Success', description: 'Image generated.', color: 'primary' })
 }
 
 function downloadImage() {
@@ -278,6 +277,7 @@ function downloadImage() {
                     <div class="flex gap-2 mt-8">
                       <UButton
                         v-if="!generatedImage"
+                        loading-auto
                         type="submit"
                       >
                         Generate
