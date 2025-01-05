@@ -186,7 +186,8 @@ async function onSubmit(event: FormSubmitEvent<any>) {
         canvas.height = targetHeight
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         ctx.drawImage(backdrop, 0, 0, canvas.width, canvas.height)
-        ctx.font = '900 72pt "Inter", sans-serif'
+        ctx.font = '900 54pt "Inter", sans-serif'
+        ctx.fontKerning = 'normal'
         ctx.fillStyle = 'white'
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
