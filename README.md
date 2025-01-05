@@ -1,12 +1,12 @@
 <div align="center"> 
   <h1>TMDB to Jellyfin Library Cover Generator 🌟</h1>
-  <p>Easily transform backdrops from <a href="https://www.themoviedb.org/" target="_blank">TMDB</a> into visually stunning covers for your <a href="https://jellyfin.org/" target="_blank">Jellyfin</a> library. This tool is specifically designed to complement the <a href="https://github.com/lscambo13/ElegantFin" target="_blank"><strong>ElegantFin</strong></a> theme, providing an eye catching media experience. 🎬✨</p>
+  <p>Easily transform backdrops from <a href="https://www.themoviedb.org/" target="_blank">TMDB</a> into covers for your <a href="https://jellyfin.org/" target="_blank">Jellyfin</a> library. This tool is designed to complement the <a href="https://github.com/lscambo13/ElegantFin" target="_blank"><strong>ElegantFin</strong></a> theme. 🎬✨</p>
 </div>
 
 ## 🚀 Features
 
 - Converts TMDB backdrops into **Jellyfin library covers**.
-- Automatically matches the ElegantFin theme.
+- Matches the ElegantFin theme.
 - Easy to use interface.
 
 ## 🖼️ Previews
@@ -22,14 +22,13 @@
 https://github.com/user-attachments/assets/67ab0e03-b8c4-4805-a2eb-707837ebee57
 
 ## 💭 Thoughts
-This project leverages TMDB’s free API to access backdrops.
+This project leverages TMDB’s free backdrops.
 - Avoid excessive API requests to ensure the service remains available to everyone.
 - Respect copyright!
 
 ## 🛠️ Stack Used
 - Frontend: Nuxt v3, Nuxt UI v3 & Tailwind CSS v4.
 - Image: Canvas.
-- API: TMDB API for backdrop data.
 - Hosting: Deployed on Vercel.
 
 ## 🔮 Future Updates
