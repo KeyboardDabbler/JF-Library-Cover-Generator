@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui-pro', '@nuxt/eslint'],
+  modules: ['@nuxt/ui-pro', '@nuxt/eslint', '@nuxt/scripts'],
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
 
