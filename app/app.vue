@@ -227,7 +227,7 @@ function downloadImage() {
       <Body class="antialiased duration-300 transition-colors">
         <NuxtLoadingIndicator />
         <div class="flex flex-col min-h-screen">
-          <UHeader title="Jellyfin Library Cover Generator" />
+          <NavHeader />
           <div class="flex-1 w-full flex flex-col">
             <div class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full">
               <div class="px-4 sm:px-6 lg:px-8">
@@ -308,19 +308,23 @@ function downloadImage() {
                 </UForm>
                 <UContainer class="mt-10 w-full max-w-[960px] mx-auto">
                   <StepperGuide />
+                  <div class="flex w-full justify-center mt-4">
+                    <UButton
+                      to="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator?tab=readme-ov-file#%EF%B8%8F-how-to-use"
+                      trailing-icon="i-lucide-rocket"
+                      size="sm"
+                      color="primary"
+                      variant="outline"
+                      class="flex items-centre justify-center mt-4"
+                    >
+                      Demo Video
+                    </UButton>
+                  </div>
                 </UContainer>
               </div>
             </div>
           </div>
-          <UFooter>
-            <p class="my-3 text-dimText">
-              Made with ❤️ by <NuxtLink
-                to=""
-                class="text-yellow-400 font-bold"
-              >
-                keyboardDabbler</NuxtLink>
-            </p>
-          </UFooter>
+          <NavFooter />
         </div>
       </Body>
     </Html>
