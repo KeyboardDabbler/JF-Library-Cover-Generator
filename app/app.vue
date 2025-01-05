@@ -306,6 +306,9 @@ function downloadImage() {
                     class="border mt-10 max-w-[960px] max-h-[540px] w-full h-auto"
                   />
                 </UForm>
+                <UContainer class="mt-10 w-full max-w-[960px] mx-auto">
+                  <StepperGuide />
+                </UContainer>
               </div>
             </div>
           </div>
