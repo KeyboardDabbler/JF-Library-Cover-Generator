@@ -15,6 +15,7 @@
     "@iconify-json/lucide": "^1.2.16",
     "@nuxt/scripts": "0.9.5",
     "@nuxt/ui-pro": "3.0.0-alpha.10",
+    "@nuxtjs/turnstile": "0.9.11",
     "@vercel/analytics": "^1.4.1",
     "nuxt": "^3.14.1592",
     "zod": "^3.24.1"

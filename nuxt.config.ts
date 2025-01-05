@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui-pro', '@nuxt/eslint', '@nuxt/scripts'],
+  modules: [
+    '@nuxt/ui-pro',
+    '@nuxt/eslint',
+    '@nuxt/scripts',
+    '@nuxtjs/turnstile'
+  ],
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
 
