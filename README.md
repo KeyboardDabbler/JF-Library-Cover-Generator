@@ -11,12 +11,10 @@
 
 ## 🖼️ Previews
   
-<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/Homepage.png" style="width:360px;height:auto;"></img>
-<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/Movies%20-%20Superheroes.png" style="width:360px;height:auto;"></img>
-<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20Emergency%20%26%20Rescue.png" style="width:360px;height:auto;"></img>
-<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20General.png" style="width:360px;height:auto;"></img>
 <img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20Kids%20%26%20Family.png" style="width:360px;height:auto;"></img>
-
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20General.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/TV%20-%20Emergency%20%26%20Rescue.png" style="width:360px;height:auto;"></img>
+<img src="https://github.com/KeyboardDabbler/JF-Library-Cover-Generator/blob/main/Previews/Homepage.png" style="width:360px;height:auto;"></img>
 
 ## 🛠️ How to Use
 https://github.com/user-attachments/assets/67ab0e03-b8c4-4805-a2eb-707837ebee57
